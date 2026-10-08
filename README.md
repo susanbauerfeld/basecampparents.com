@@ -22,6 +22,7 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent \
 # (they are lazy-loaded and wget can't discover them).
 python3 scripts/postprocess.py <wget-output-dir> <site-dir>
 python3 scripts/mailto_form.py <site-dir>
+python3 scripts/signup_button.py <site-dir>
 rm -r <site-dir>/contact   # merged into the footer form; also repoint 'contact/index.html' links to 'index.html#contact'
 ```
 
@@ -33,8 +34,9 @@ query strings in their names, and rewrites absolute links to local relative ones
 - The footer "Begin the Dialogue" form opens a `mailto:` to Susan and Chris (subject from the name,
   body = message + name + email) via `scripts/mailto_form.py`. Email is the only required field.
   Visitors without a mail client configured can't send it.
-- Other dynamic WordPress features don't work: the Gravity Forms newsletter popup, comment forms,
-  search, and anything hitting `admin-ajax.php` / `wp-json`. The newsletter and comment forms still post
-  to the live site.
+- The newsletter popup's Gravity Form is replaced by a "Sign up here!" button linking to the
+  Constant Contact signup page (`scripts/signup_button.py`).
+- Other dynamic WordPress features don't work: comment forms, search, and anything hitting
+  `admin-ajax.php` / `wp-json`. Comment forms still post to the live site.
 - `/additional-resources/`, `/the-5-rs-explained/` and `/category/events/` are linked from the
   nav but 404 on the live site too; those links still point at the live domain.
