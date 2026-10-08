@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Cardo';
+  font-style: italic;
+  font-weight: 400;
+  src: url(../fonts.gstatic.com/s/cardo/v21/wlpxgwjKBV1pqhv97IMx2Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Cardo';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts.gstatic.com/s/cardo/v21/wlp_gwjKBV1pqhv43IQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Cardo';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts.gstatic.com/s/cardo/v21/wlpygwjKBV1pqhND-ZQW-WY.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nothing You Could Do';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts.gstatic.com/s/nothingyoucoulddo/v21/oY1B8fbBpaP5OX3DtrRYf_Q2BPB1SnfZb3OOnV4.ttf) format('truetype');
+}

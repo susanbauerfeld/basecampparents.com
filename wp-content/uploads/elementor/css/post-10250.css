@@ -1,0 +1,641 @@
+.elementor-widget-text-editor{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );color:var( --e-global-color-text );}.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:var( --e-global-color-primary );}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap, .elementor-widget-text-editor.elementor-drop-cap-view-default .elementor-drop-cap{color:var( --e-global-color-primary );border-color:var( --e-global-color-primary );}.elementor-10250 .elementor-element.elementor-element-c7c6596{margin:3rem 0rem calc(var(--kit-widget-spacing, 0px) + 0rem) 0rem;font-family:"Noto Serif", Sans-serif;font-size:1.2rem;font-weight:400;line-height:2rem;color:#343434;}.elementor-10250 .elementor-element.elementor-element-c7c6596 p{margin-block-end:0px;}.elementor-10250 .elementor-element.elementor-element-b0c318c{margin:0.5rem 0rem calc(var(--kit-widget-spacing, 0px) + 0rem) 0rem;text-align:end;font-family:"Inter", Sans-serif;font-size:1.2rem;font-weight:400;line-height:1.5rem;color:#343434;}.elementor-10250 .elementor-element.elementor-element-b0c318c p{margin-block-end:0px;}.elementor-10250 .elementor-element.elementor-element-1d6c00b{margin:0rem 0rem calc(var(--kit-widget-spacing, 0px) + 0rem) 0rem;text-align:end;font-family:"Inter", Sans-serif;font-size:1rem;font-weight:400;line-height:1.2rem;color:#343434;}.elementor-10250 .elementor-element.elementor-element-1d6c00b p{margin-block-end:0px;}.elementor-10250 .elementor-element.elementor-element-5b691d5{margin:3rem 0rem calc(var(--kit-widget-spacing, 0px) + 0rem) 0rem;font-family:"Noto Serif", Sans-serif;font-size:1.2rem;font-weight:400;line-height:2rem;color:#343434;}.elementor-10250 .elementor-element.elementor-element-5b691d5 p{margin-block-end:0px;}.elementor-10250 .elementor-element.elementor-element-f72ad1f{margin:0.5rem 0rem calc(var(--kit-widget-spacing, 0px) + 0rem) 0rem;text-align:end;font-family:"Inter", Sans-serif;font-size:1.2rem;font-weight:400;line-height:1.5rem;color:#343434;}.elementor-10250 .elementor-element.elementor-element-f72ad1f p{margin-block-end:0px;}.elementor-10250 .elementor-element.elementor-element-f28d8e0{margin:0rem 0rem calc(var(--kit-widget-spacing, 0px) + 0rem) 0rem;text-align:end;font-family:"Inter", Sans-serif;font-size:1rem;font-weight:400;line-height:1.5rem;color:#343434;}.elementor-10250 .elementor-element.elementor-element-f28d8e0 p{margin-block-end:0px;}.elementor-10250 .elementor-element.elementor-element-9ff365c{margin:3rem 0rem calc(var(--kit-widget-spacing, 0px) + 0rem) 0rem;font-family:"Noto Serif", Sans-serif;font-size:1.2rem;font-weight:400;line-height:2rem;color:#343434;}.elementor-10250 .elementor-element.elementor-element-9ff365c p{margin-block-end:0px;}.elementor-10250 .elementor-element.elementor-element-c24ceca{margin:0.5rem 0rem calc(var(--kit-widget-spacing, 0px) + 0rem) 0rem;text-align:end;font-family:"Inter", Sans-serif;font-size:1.2rem;font-weight:400;line-height:1.5rem;color:#343434;}.elementor-10250 .elementor-element.elementor-element-c24ceca p{margin-block-end:0px;}.elementor-10250 .elementor-element.elementor-element-0f561df{margin:0rem 0rem calc(var(--kit-widget-spacing, 0px) + 0rem) 0rem;text-align:end;font-family:"Inter", Sans-serif;font-size:1rem;font-weight:400;line-height:1.2rem;color:#343434;}.elementor-10250 .elementor-element.elementor-element-0f561df p{margin-block-end:0px;}.elementor-10250 .elementor-element.elementor-element-174e399{margin:3rem 0rem calc(var(--kit-widget-spacing, 0px) + 0rem) 0rem;font-family:"Noto Serif", Sans-serif;font-size:1.2rem;font-weight:400;line-height:2rem;color:#343434;}.elementor-10250 .elementor-element.elementor-element-174e399 p{margin-block-end:0px;}.elementor-10250 .elementor-element.elementor-element-c0f8cde{margin:0.5rem 0rem calc(var(--kit-widget-spacing, 0px) + 0rem) 0rem;text-align:end;font-family:"Inter", Sans-serif;font-size:1.2rem;font-weight:400;line-height:1.5rem;color:#343434;}.elementor-10250 .elementor-element.elementor-element-c0f8cde p{margin-block-end:0px;}.elementor-10250 .elementor-element.elementor-element-0fd57e0{margin:0rem 0rem calc(var(--kit-widget-spacing, 0px) + 0rem) 0rem;text-align:end;font-family:"Inter", Sans-serif;font-size:1rem;font-weight:400;line-height:1.5rem;color:#343434;}.elementor-10250 .elementor-element.elementor-element-0fd57e0 p{margin-block-end:0px;}.elementor-widget-image-box .elementor-image-box-title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );color:var( --e-global-color-primary );}.elementor-widget-image-box:has(:hover) .elementor-image-box-title,
+					 .elementor-widget-image-box:has(:focus) .elementor-image-box-title{color:var( --e-global-color-primary );}.elementor-widget-image-box .elementor-image-box-description{font-family:var( --e-global-typography-text-font-family ), Sans-serif;font-weight:var( --e-global-typography-text-font-weight );color:var( --e-global-color-text );}.elementor-10250 .elementor-element.elementor-element-50a5f76 .elementor-image-box-wrapper{text-align:start;}.elementor-10250 .elementor-element.elementor-element-50a5f76.elementor-position-right .elementor-image-box-img{margin-left:15px;}.elementor-10250 .elementor-element.elementor-element-50a5f76.elementor-position-left .elementor-image-box-img{margin-right:15px;}.elementor-10250 .elementor-element.elementor-element-50a5f76.elementor-position-top .elementor-image-box-img{margin-bottom:15px;}.elementor-10250 .elementor-element.elementor-element-50a5f76 .elementor-image-box-wrapper .elementor-image-box-img{width:100%;}.elementor-10250 .elementor-element.elementor-element-50a5f76 .elementor-image-box-img img{height:200px;object-fit:contain;object-position:center center;transition-duration:0.3s;}.elementor-10250 .elementor-element.elementor-element-50a5f76 .elementor-image-box-title{color:#037C80;}.elementor-10250 .elementor-element.elementor-element-50a5f76:has(:hover) .elementor-image-box-title,
+					 .elementor-10250 .elementor-element.elementor-element-50a5f76:has(:focus) .elementor-image-box-title{color:#037C80;}.elementor-10250 .elementor-element.elementor-element-50a5f76 .elementor-image-box-description{color:#414141;}.elementor-10250 .elementor-element.elementor-element-fb2056f .elementor-image-box-wrapper{text-align:start;}.elementor-10250 .elementor-element.elementor-element-fb2056f.elementor-position-right .elementor-image-box-img{margin-left:15px;}.elementor-10250 .elementor-element.elementor-element-fb2056f.elementor-position-left .elementor-image-box-img{margin-right:15px;}.elementor-10250 .elementor-element.elementor-element-fb2056f.elementor-position-top .elementor-image-box-img{margin-bottom:15px;}.elementor-10250 .elementor-element.elementor-element-fb2056f .elementor-image-box-wrapper .elementor-image-box-img{width:100%;}.elementor-10250 .elementor-element.elementor-element-fb2056f .elementor-image-box-img img{height:200px;object-fit:contain;object-position:center center;transition-duration:0.3s;}.elementor-10250 .elementor-element.elementor-element-fb2056f .elementor-image-box-title{color:#037C80;}.elementor-10250 .elementor-element.elementor-element-fb2056f:has(:hover) .elementor-image-box-title,
+					 .elementor-10250 .elementor-element.elementor-element-fb2056f:has(:focus) .elementor-image-box-title{color:#037C80;}.elementor-10250 .elementor-element.elementor-element-fb2056f .elementor-image-box-description{color:#414141;}.elementor-10250 .elementor-element.elementor-element-97472dd .elementor-image-box-wrapper{text-align:start;}.elementor-10250 .elementor-element.elementor-element-97472dd.elementor-position-right .elementor-image-box-img{margin-left:15px;}.elementor-10250 .elementor-element.elementor-element-97472dd.elementor-position-left .elementor-image-box-img{margin-right:15px;}.elementor-10250 .elementor-element.elementor-element-97472dd.elementor-position-top .elementor-image-box-img{margin-bottom:15px;}.elementor-10250 .elementor-element.elementor-element-97472dd .elementor-image-box-wrapper .elementor-image-box-img{width:100%;}.elementor-10250 .elementor-element.elementor-element-97472dd .elementor-image-box-img img{height:200px;object-fit:contain;object-position:center center;transition-duration:0.3s;}.elementor-10250 .elementor-element.elementor-element-97472dd .elementor-image-box-title{color:#037C80;}.elementor-10250 .elementor-element.elementor-element-97472dd:has(:hover) .elementor-image-box-title,
+					 .elementor-10250 .elementor-element.elementor-element-97472dd:has(:focus) .elementor-image-box-title{color:#037C80;}.elementor-10250 .elementor-element.elementor-element-97472dd .elementor-image-box-description{color:#414141;}.elementor-widget-heading .elementor-heading-title{font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-weight:var( --e-global-typography-primary-font-weight );color:var( --e-global-color-primary );}.elementor-10250 .elementor-element.elementor-element-569957a{margin:0rem 0rem calc(var(--kit-widget-spacing, 0px) + 2rem) 0rem;text-align:start;}.elementor-10250 .elementor-element.elementor-element-569957a .elementor-heading-title{font-family:"Roboto Slab", Sans-serif;font-size:2.5rem;font-weight:400;color:#037C80;}.elementor-10250 .elementor-element.elementor-element-3fbc50f{padding:0rem 0rem 1rem 0rem;border-style:solid;border-width:0px 0px 1px 0px;border-color:#FFFFFF;}.elementor-10250 .elementor-element.elementor-element-3fbc50f .elementor-heading-title{font-family:"Roboto Slab", Sans-serif;font-weight:500;color:var( --e-global-color-c684ca1 );}.elementor-10250 .elementor-element.elementor-element-b505a3d{padding:0rem 0rem 1rem 0rem;border-style:solid;border-width:0px 0px 1px 0px;border-color:#FFFFFF;}.elementor-10250 .elementor-element.elementor-element-b505a3d .elementor-heading-title{font-family:"Roboto Slab", Sans-serif;font-weight:500;color:var( --e-global-color-23db457 );}.elementor-10250 .elementor-element.elementor-element-fabde6f{--display:flex;border-style:none;--border-style:none;--padding-top:1rem;--padding-bottom:1rem;--padding-left:0rem;--padding-right:0rem;}.elementor-10250 .elementor-element.elementor-element-c7f6114{width:100%;max-width:100%;font-family:"Roboto Slab", Sans-serif;font-size:1rem;font-weight:400;line-height:2rem;color:#4A4A4A;}.elementor-10250 .elementor-element.elementor-element-65189aa{--display:flex;border-style:none;--border-style:none;--padding-top:1rem;--padding-bottom:1rem;--padding-left:0rem;--padding-right:0rem;}.elementor-10250 .elementor-element.elementor-element-3210eda{width:100%;max-width:100%;font-family:"Roboto Slab", Sans-serif;font-size:1rem;font-weight:400;line-height:2rem;color:#4A4A4A;}.elementor-10250 .elementor-element.elementor-element-ced4b92{--display:flex;border-style:none;--border-style:none;--padding-top:1rem;--padding-bottom:1rem;--padding-left:0rem;--padding-right:0rem;}.elementor-10250 .elementor-element.elementor-element-b0e6780{width:100%;max-width:100%;font-family:"Roboto Slab", Sans-serif;font-size:1rem;font-weight:400;line-height:2rem;color:#4A4A4A;}.elementor-10250 .elementor-element.elementor-element-d1e2fb7{--display:flex;border-style:none;--border-style:none;--padding-top:1rem;--padding-bottom:1rem;--padding-left:0rem;--padding-right:0rem;}.elementor-10250 .elementor-element.elementor-element-e30deb1{width:100%;max-width:100%;font-family:"Roboto Slab", Sans-serif;font-size:1rem;font-weight:400;line-height:2rem;color:#4A4A4A;}.elementor-10250 .elementor-element.elementor-element-b4ce52e{--display:flex;border-style:none;--border-style:none;--padding-top:1rem;--padding-bottom:1rem;--padding-left:0rem;--padding-right:0rem;}.elementor-10250 .elementor-element.elementor-element-e40be1a{width:100%;max-width:100%;font-family:"Roboto Slab", Sans-serif;font-size:1rem;font-weight:400;line-height:2rem;color:#4A4A4A;}.elementor-10250 .elementor-element.elementor-element-e57d7a0{--display:flex;border-style:none;--border-style:none;--padding-top:1rem;--padding-bottom:1rem;--padding-left:0rem;--padding-right:0rem;}.elementor-10250 .elementor-element.elementor-element-431021e{width:100%;max-width:100%;font-family:"Roboto Slab", Sans-serif;font-size:1rem;font-weight:400;line-height:2rem;color:#4A4A4A;}.elementor-10250 .elementor-element.elementor-element-dc708ae{--display:flex;border-style:none;--border-style:none;--padding-top:1rem;--padding-bottom:1rem;--padding-left:0rem;--padding-right:0rem;}.elementor-10250 .elementor-element.elementor-element-99e97c4{width:100%;max-width:100%;font-family:"Roboto Slab", Sans-serif;font-size:1rem;font-weight:400;line-height:2rem;color:#4A4A4A;}.elementor-10250 .elementor-element.elementor-element-1204ed5{--display:flex;border-style:none;--border-style:none;--padding-top:1rem;--padding-bottom:1rem;--padding-left:0rem;--padding-right:0rem;}.elementor-10250 .elementor-element.elementor-element-113aa25{width:100%;max-width:100%;font-family:"Roboto Slab", Sans-serif;font-size:1rem;font-weight:400;line-height:2rem;color:#4A4A4A;}.elementor-10250 .elementor-element.elementor-element-972fdd7{--n-accordion-title-font-size:1.4rem;--n-accordion-title-justify-content:space-between;--n-accordion-title-flex-grow:1;--n-accordion-title-icon-order:initial;--n-accordion-item-title-space-between:0px;--n-accordion-item-title-distance-from-content:0px;--n-accordion-title-normal-color:#037C80;--n-accordion-title-active-color:#037C80;--n-accordion-icon-size:1.5rem;--n-accordion-icon-normal-color:#037C80;--n-accordion-icon-active-color:#037C80;}.elementor-10250 .elementor-element.elementor-element-972fdd7 > .e-n-accordion > .e-n-accordion-item > .e-n-accordion-item-title{border-style:solid;border-width:0px 0px 2px 0px;border-color:#636363;}.elementor-10250 .elementor-element.elementor-element-972fdd7 > .e-n-accordion > .e-n-accordion-item[open] > .e-n-accordion-item-title{border-style:none;}.elementor-10250 .elementor-element.elementor-element-972fdd7 {--n-accordion-padding:0.8rem 0rem 0.8rem 0rem;}:where( .elementor-10250 .elementor-element.elementor-element-972fdd7 > .e-n-accordion > .e-n-accordion-item > .e-n-accordion-item-title > .e-n-accordion-item-title-header ) > .e-n-accordion-item-title-text{font-family:"Roboto Slab", Sans-serif;}@media(max-width:1024px){.elementor-10250 .elementor-element.elementor-element-c7c6596{margin:2rem 0rem calc(var(--kit-widget-spacing, 0px) + 0rem) 0rem;}}@media(max-width:767px){.elementor-10250 .elementor-element.elementor-element-50a5f76 .elementor-image-box-img{margin-bottom:15px;}.elementor-10250 .elementor-element.elementor-element-fb2056f .elementor-image-box-img{margin-bottom:15px;}.elementor-10250 .elementor-element.elementor-element-97472dd .elementor-image-box-img{margin-bottom:15px;}.elementor-10250 .elementor-element.elementor-element-569957a .elementor-heading-title{font-size:1.5rem;}.elementor-10250 .elementor-element.elementor-element-972fdd7{padding:0rem 0.5rem 0rem 0.5rem;--n-accordion-title-font-size:1.2rem;}}/* Start custom CSS for text-editor, class: .elementor-element-c7c6596 */.elementor-10250 .elementor-element.elementor-element-c7c6596.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-c7c6596.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-b0c318c */.elementor-10250 .elementor-element.elementor-element-b0c318c.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-b0c318c.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-5b691d5 */.elementor-10250 .elementor-element.elementor-element-5b691d5.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-5b691d5.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-f72ad1f */.elementor-10250 .elementor-element.elementor-element-f72ad1f.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-f72ad1f.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-9ff365c */.elementor-10250 .elementor-element.elementor-element-9ff365c.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-9ff365c.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-c24ceca */.elementor-10250 .elementor-element.elementor-element-c24ceca.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-c24ceca.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-174e399 */.elementor-10250 .elementor-element.elementor-element-174e399.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-174e399.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-c0f8cde */.elementor-10250 .elementor-element.elementor-element-c0f8cde.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-c0f8cde.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for heading, class: .elementor-element-3fbc50f */.elementor-10250 .elementor-element.elementor-element-3fbc50f small{
+    color: var(--Green);
+}/* End custom CSS */
+/* Start custom CSS for heading, class: .elementor-element-b505a3d */.elementor-10250 .elementor-element.elementor-element-b505a3d small{
+    color: #fff;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-c7f6114 */.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-3210eda */.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-b0e6780 */.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor ol{
+        font-family: unset;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e30deb1 */.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e40be1a */.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-431021e */.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-99e97c4 */.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-113aa25 */.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-c7f6114 */.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-3210eda */.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-b0e6780 */.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor ol{
+        font-family: unset;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e30deb1 */.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e40be1a */.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-431021e */.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-99e97c4 */.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-113aa25 */.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-c7f6114 */.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-3210eda */.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-b0e6780 */.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor ol{
+        font-family: unset;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e30deb1 */.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e40be1a */.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-431021e */.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-99e97c4 */.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-113aa25 */.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-c7f6114 */.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-3210eda */.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-b0e6780 */.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor ol{
+        font-family: unset;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e30deb1 */.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e40be1a */.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-431021e */.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-99e97c4 */.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-113aa25 */.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-c7f6114 */.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-3210eda */.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-b0e6780 */.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor ol{
+        font-family: unset;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e30deb1 */.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e40be1a */.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-431021e */.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-99e97c4 */.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-113aa25 */.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-c7f6114 */.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-3210eda */.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-b0e6780 */.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor ol{
+        font-family: unset;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e30deb1 */.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e40be1a */.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-431021e */.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-99e97c4 */.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-113aa25 */.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-c7f6114 */.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-3210eda */.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-b0e6780 */.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor ol{
+        font-family: unset;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e30deb1 */.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e40be1a */.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-431021e */.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-99e97c4 */.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-113aa25 */.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-c7f6114 */.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-3210eda */.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-b0e6780 */.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor ol{
+        font-family: unset;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e30deb1 */.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e40be1a */.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-431021e */.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-99e97c4 */.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-113aa25 */.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-c7f6114 */.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-c7f6114.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-3210eda */.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-3210eda.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-b0e6780 */.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-b0e6780.elementor-widget-text-editor ol{
+        font-family: unset;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e30deb1 */.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e30deb1.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-e40be1a */.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-e40be1a.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-431021e */.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-431021e.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-99e97c4 */.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-99e97c4.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */
+/* Start custom CSS for text-editor, class: .elementor-element-113aa25 */.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor p{
+    line-height: unset;
+        font-family: unset;
+}
+.elementor-10250 .elementor-element.elementor-element-113aa25.elementor-widget-text-editor h3{
+        font-family: unset;
+        text-transform: uppercase;
+}/* End custom CSS */

@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2015 by original authors @ fontello.com</metadata>
+<defs>
+<font id="indigo-icons" horiz-adv-x="1000" >
+<font-face font-family="indigo-icons" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="comment" unicode="&#xe800;" d="m1137 749v-532q0-41-29-70t-71-30h-168v-268l-267 268h-502q-41 0-70 30t-30 70v532q0 41 30 71t70 29h937q41 0 71-29t29-71z" horiz-adv-x="1137" />
+</font>
+</defs>
+</svg>
