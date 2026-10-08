@@ -514,6 +514,20 @@ Below we offer a sneak peak at the resources that help kids thrive. The power of
 				</div>
 			</div>
 		</form>
+<script id="mailto-form">
+document.addEventListener("submit", function (e) {
+  var f = e.target;
+  if (!f.matches || !f.matches("form.elementor-form")) return;
+  e.preventDefault();
+  e.stopPropagation();
+  var val = function (n) { var el = f.elements["form_fields[" + n + "]"]; return el ? el.value.trim() : ""; };
+  var name = val("name"), email = val("email"), msg = val("message");
+  var body = [msg, "", name, email].join("\n").trim().replace(/\n/g, "\r\n");
+  var subject = "Website inquiry" + (name ? " from " + name : "");
+  window.location.href = "mailto:susan@susanbauerfeld.com,chris@YourSelfSeries.com?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body);
+}, true);
+</script>
 						</div>
 					</div>
 				</div>
@@ -573,7 +587,7 @@ Below we offer a sneak peak at the resources that help kids thrive. The power of
 											</a>
 									</li>
 								<li class="elementor-icon-list-item elementor-inline-item">
-											<a href="../contact/index.html">
+											<a href="../index.html#contact">
 
 											<span class="elementor-icon-list-text">Contact</span>
 											</a>
