@@ -9,7 +9,8 @@ python3 -m http.server 8000
 ```
 
 Then open http://localhost:8000. Deploy by pointing any static host at the repo root.
-Inline Elementor/Popup Maker config uses root-relative URLs, so the site must be served from a domain root.
+All asset URLs are page-relative, so it also works from a sub-path (e.g. a GitHub Pages project URL).
+`.nojekyll` stops GitHub Pages from running Jekyll, which would drop `_`-prefixed dirs.
 
 ## Regenerate
 
@@ -23,6 +24,9 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent \
 python3 scripts/postprocess.py <wget-output-dir> <site-dir>
 python3 scripts/mailto_form.py <site-dir>
 python3 scripts/signup_button.py <site-dir>
+python3 scripts/static_cleanup.py <site-dir>
+# static_cleanup.py doesn't fetch the Elementor lightbox/dialog/swiper/share-link assets
+# that load lazily on /gallery/; download them from the live site too.
 rm -r <site-dir>/contact   # merged into the footer form; also repoint 'contact/index.html' links to 'index.html#contact'
 ```
 
@@ -36,7 +40,7 @@ query strings in their names, and rewrites absolute links to local relative ones
   Visitors without a mail client configured can't send it.
 - The newsletter popup's Gravity Form is replaced by a "Sign up here!" button linking to the
   Constant Contact signup page (`scripts/signup_button.py`).
-- Other dynamic WordPress features don't work: comment forms, search, and anything hitting
-  `admin-ajax.php` / `wp-json`. Comment forms still post to the live site.
-- `/additional-resources/`, `/the-5-rs-explained/` and `/category/events/` are linked from the
-  nav but 404 on the live site too; those links still point at the live domain.
+- `scripts/static_cleanup.py` removes what can't work statically: the comment form (there are no
+  comments), the search popup, footer links to `/additional-resources/`, `/the-5-rs-explained/` and
+  `/category/events/` (404 on the live site too), Gravity Forms / Akismet assets, and the REST API /
+  oEmbed `<link>`s. It also makes inline-config asset URLs page-relative and the Yoast JSON-LD absolute.
