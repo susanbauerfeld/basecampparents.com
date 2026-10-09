@@ -28,6 +28,12 @@ All asset URLs are page-relative, so it also works from a sub-path (e.g. a GitHu
 - Run locally: `pip install -r scripts/requirements.txt && python3 scripts/render_events.py .`
   (an optional second argument is a local `.ics` file to render instead of the live feed).
 
+## Share previews
+
+`og:image` / `twitter:image` must be absolute URLs on the host actually serving the site. The deploy
+workflow runs `scripts/share_urls.py` with the Pages base URL, so they point at github.io until the
+custom domain is set in Settings -> Pages, and at www.basecampparents.com after.
+
 ## Regenerate
 
 ```sh
@@ -39,7 +45,7 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent \
 # (they are lazy-loaded and wget can't discover them).
 python3 scripts/postprocess.py <wget-output-dir> <site-dir>
 python3 scripts/contact_button.py <site-dir>
-python3 scripts/signup_button.py <site-dir>
+python3 scripts/signup_form.py <site-dir>
 python3 scripts/static_cleanup.py <site-dir>
 python3 scripts/content_edits.py <site-dir>   # also copy wp-content/uploads/2026/06/basecampparents-authors.png
 # static_cleanup.py doesn't fetch the Elementor lightbox/dialog/swiper/share-link assets
@@ -54,8 +60,9 @@ query strings in their names, and rewrites absolute links to local relative ones
 
 - The footer "Begin the Dialogue" form is reduced to its "GET IN TOUCH" button, a `mailto:` link to
   info@basecampparents.com (`scripts/contact_button.py`).
-- The newsletter popup's Gravity Form is replaced by a "Sign up here!" button linking to the
-  Constant Contact signup page (`scripts/signup_button.py`).
+- The newsletter popup's Gravity Form is replaced by a Constant Contact inline sign-up form
+  (`scripts/signup_form.py`), restyled to look like the old one. Constant Contact's script draws it
+  and sends sign-ups straight to the list; no server needed.
 - `scripts/static_cleanup.py` removes what can't work statically: the comment form (there are no
   comments), the search popup, footer links to `/additional-resources/`, `/the-5-rs-explained/` and
   `/category/events/` (404 on the live site too), Gravity Forms / Akismet assets, and the REST API /
