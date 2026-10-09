@@ -7,15 +7,18 @@ The event list lives between <!-- events:start --> and <!-- events:end --> in th
 On the first run (no markers yet) it also lays the page out as the event list plus an
 embedded Google Calendar, side by side on wide screens.
 
-Each calendar event renders as:
-    <date and time>
-    <title>. <location>.
-    Click here to register.        (if the description contains a link)
-The link text says "for more information" instead when the description mentions
-"more information".
+Each calendar event renders as a date block (month/day) beside:
+    <title>
+    <weekday> · <time>
+    <location>
+    <description>
+The description is shown as written: bold/italic/underline, line breaks and links from
+Google Calendar's editor are kept (everything else is stripped), and bare web addresses
+become clickable.
 """
 import datetime as dt
 import html
+import html.parser
 import os
 import re
 import sys
@@ -55,6 +58,17 @@ LAYOUT_CSS = """<style id="events-layout-css">
 .events-calendar{width:100%;max-width:600px}
 .events-calendar iframe{display:block;width:100%;height:520px;border:0}
 .events-empty{font-style:italic}
+.events-list{width:100%;margin:0;padding:0;list-style:none}
+.event{display:flex;gap:20px;align-items:flex-start;padding:22px 0;border-top:1px solid #dfe9e9}
+.event:first-child{border-top:0;padding-top:4px}
+.event-date{flex:0 0 64px;padding:8px 0 10px;background:#C3DDDD;color:var(--Green);text-align:center;line-height:1}
+.event-month{display:block;font-family:Inter,sans-serif;font-size:12px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase}
+.event-day{display:block;margin-top:4px;font-family:Cardo,Georgia,serif;font-size:30px;font-weight:700}
+.event-body{min-width:0}
+.event-title{margin:0 0 4px;font-family:Cardo,Georgia,serif;font-size:22px;font-weight:700;line-height:1.25;color:#222}
+.event-meta{margin:0;font-size:16px;line-height:1.5;color:#555}
+.event-desc{margin:8px 0 0;font-size:16px;line-height:1.5;color:#333;overflow-wrap:anywhere}
+.event-desc a{color:var(--Green);text-decoration:underline}
 @media (min-width:1024px){
   .events-layout{flex-direction:row;align-items:flex-start;justify-content:center;gap:56px}
   .events-layout > .e-con{flex:0 1 600px}
@@ -77,7 +91,8 @@ def remove_children(text, start):
 
 def ensure_layout(text):
     if START in text:
-        return text
+        # Already laid out; refresh the stylesheet in case it changed.
+        return re.sub(r'<style id="events-layout-css">.*?</style>', lambda _: LAYOUT_CSS, text, count=1, flags=re.S)
     m = LIST_CONTAINER.search(text)
     if not m:
         raise ValueError("event list container not found")
@@ -104,35 +119,111 @@ def clock(t):
 
 
 def when(start, end):
+    """Return (first day, "Weekday · time" line) for an event."""
     if not isinstance(start, dt.datetime):  # all-day; DTEND is exclusive
         last = (end - dt.timedelta(days=1)) if end else start
-        day = f"{start:%B} {start.day}"
         if last == start:
-            return day
-        if last.month == start.month:
-            return f"{day}-{last.day}"
-        return f"{day}-{last:%B} {last.day}"
+            return start, f"{start:%A}"
+        return start, f"{start:%A, %B} {start.day} – {last:%A, %B} {last.day}"
     s = start.astimezone(TZ)
-    day = f"{s:%B} {s.day}"
     if not end:
-        return f"{day}, {clock(s)} {'am' if s.hour < 12 else 'pm'}"
+        return s, f"{s:%A} · {clock(s)} {'am' if s.hour < 12 else 'pm'}"
     e = end.astimezone(TZ)
     s_ampm, e_ampm = ("am" if s.hour < 12 else "pm"), ("am" if e.hour < 12 else "pm")
     if s_ampm == e_ampm:
-        return f"{day}, {clock(s)}-{clock(e)} {e_ampm}"
-    return f"{day}, {clock(s)} {s_ampm}-{clock(e)} {e_ampm}"
+        return s, f"{s:%A} · {clock(s)}–{clock(e)} {e_ampm}"
+    return s, f"{s:%A} · {clock(s)} {s_ampm}–{clock(e)} {e_ampm}"
 
 
-def first_link(description):
-    m = re.search(r'href="(https?://[^"]+)"', description) or re.search(r"https?://[^\s<>\"]+", description)
-    if not m:
-        return None
-    url = html.unescape(m.group(1) if m.re.groups else m.group(0)).rstrip(".,)")
-    # Google Calendar sometimes wraps links as https://www.google.com/url?q=<real url>&sa=...
+URL = re.compile(r"https?://[^\s<>\"]+")
+
+
+def clean_url(url):
+    """Unwrap Google's https://www.google.com/url?q=<real url> redirects."""
     parsed = urllib.parse.urlparse(url)
     if parsed.netloc.endswith("google.com") and parsed.path == "/url":
-        url = urllib.parse.parse_qs(parsed.query).get("q", [url])[0]
+        return urllib.parse.parse_qs(parsed.query).get("q", [url])[0]
     return url
+
+
+def short(url):
+    """Display form of a bare URL: no scheme or www., at most ~40 characters."""
+    text = re.sub(r"^https?://(www\.)?", "", url).rstrip("/")
+    return text if len(text) <= 40 else text[:38] + "\u2026"
+
+
+def link(url, text=None):
+    url = clean_url(url)
+    label = html.escape(text) if text else html.escape(short(url))
+    return f'<a href="{html.escape(url)}" target="_blank" rel="noopener">{label}</a>'
+
+
+def linkify(text):
+    """Escape plain text, turning web addresses into links (trailing punctuation stays outside)."""
+    out, pos = [], 0
+    for m in URL.finditer(text):
+        url = m.group(0).rstrip(".,;:!?)")
+        out.append(html.escape(text[pos:m.start()]))
+        out.append(link(url))
+        pos = m.start() + len(url)
+    out.append(html.escape(text[pos:]))
+    return "".join(out).replace("\n", "<br>")
+
+
+class Description(html.parser.HTMLParser):
+    """Keep a safe subset of the HTML Google Calendar stores in event descriptions."""
+
+    INLINE = {"b": "strong", "strong": "strong", "i": "em", "em": "em", "u": "u"}
+    BREAKS = {"p", "div", "li", "ul", "ol"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.out, self.href, self.anchor_text, self.skip = [], None, [], 0
+
+    def handle_starttag(self, tag, attrs):
+        if tag in ("script", "style"):
+            self.skip += 1
+        elif tag == "a":
+            href = dict(attrs).get("href") or ""
+            self.href = href if re.match(r"https?://", href) else ""
+            self.anchor_text = []
+        elif tag == "br":
+            self.out.append("<br>")
+        elif tag in self.INLINE and self.href is None:
+            self.out.append(f"<{self.INLINE[tag]}>")
+        elif tag == "li":
+            self.out.append("\u2022 ")
+
+    def handle_endtag(self, tag):
+        if tag in ("script", "style"):
+            self.skip = max(0, self.skip - 1)
+        elif tag == "a" and self.href is not None:
+            text = "".join(self.anchor_text).strip()
+            if self.href:
+                same = not text or URL.fullmatch(text) or text.rstrip("/") == self.href.rstrip("/")
+                self.out.append(link(self.href, None if same else text))
+            else:
+                self.out.append(linkify(text))
+            self.href = None
+        elif tag in self.INLINE and self.href is None:
+            self.out.append(f"</{self.INLINE[tag]}>")
+        elif tag in self.BREAKS:
+            self.out.append("<br>")
+
+    def handle_data(self, data):
+        if self.skip:
+            return
+        if self.href is not None:
+            self.anchor_text.append(data)
+        else:
+            self.out.append(linkify(data))
+
+    def render(self, source):
+        self.feed(source)
+        self.close()
+        result = "".join(self.out)
+        result = re.sub(r"(\s*<br>\s*){3,}", "<br><br>", result)
+        return re.sub(r"^(\s*<br>)+|(<br>\s*)+$", "", result.strip())
 
 
 def render_event(ev):
@@ -141,19 +232,21 @@ def render_event(ev):
     title = str(ev.get("SUMMARY", "")).strip().rstrip(".")
     location = str(ev.get("LOCATION", "")).strip().rstrip(".")
     description = str(ev.get("DESCRIPTION", ""))
-    text = ". ".join(html.escape(p) for p in (title, location) if p) + "."
-    link = first_link(description)
-    if link:
-        purpose = "for more information" if re.search(r"(?i)more info", description) else "to register"
-        text += (
-            f'<br>Click <a href="{html.escape(link)}" target="_blank" rel="noopener">'
-            f"<strong><u>here</u></strong></a> {purpose}."
-        )
+    day, time = when(start, end)
+    lines = [f'<h3 class="event-title">{html.escape(title)}</h3>', f'<p class="event-meta">{html.escape(time)}']
+    if location:
+        lines[-1] += f"<br>{html.escape(location)}"
+    lines[-1] += "</p>"
+    desc = Description().render(description) if description.strip() else ""
+    if desc:
+        lines.append(f'<p class="event-desc">{desc}</p>')
+    body = "\n\t\t".join(lines)
     return (
-        '<div class="elementor-element e-con e-atomic-element e-div-block-base event">\n'
-        f'\t<h4 class="e-heading-base">{html.escape(when(start, end))}</h4>\n'
-        f'\t<p class="e-paragraph-base">{text}</p>\n'
-        "</div>"
+        '<li class="event">\n'
+        f'\t<time class="event-date" datetime="{day:%Y-%m-%d}">'
+        f'<span class="event-month">{day:%b}</span><span class="event-day">{day.day}</span></time>\n'
+        f'\t<div class="event-body">\n\t\t{body}\n\t</div>\n'
+        "</li>"
     )
 
 
@@ -189,7 +282,7 @@ def main():
 
     events = upcoming(calendar, dt.datetime.now(TZ))
     if events:
-        body = "\n".join(render_event(ev) for ev in events)
+        body = '<ul class="events-list">\n' + "\n".join(render_event(ev) for ev in events) + "\n</ul>"
     else:
         body = '<p class="e-paragraph-base events-empty">No upcoming events right now. Check back soon!</p>'
 
