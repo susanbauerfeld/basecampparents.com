@@ -38,7 +38,7 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent \
 # Also download every *.bundle.min.js named in the Elementor webpack runtimes
 # (they are lazy-loaded and wget can't discover them).
 python3 scripts/postprocess.py <wget-output-dir> <site-dir>
-python3 scripts/mailto_form.py <site-dir>
+python3 scripts/contact_button.py <site-dir>
 python3 scripts/signup_button.py <site-dir>
 python3 scripts/static_cleanup.py <site-dir>
 python3 scripts/content_edits.py <site-dir>   # also copy wp-content/uploads/2026/06/basecampparents-authors.png
@@ -52,9 +52,8 @@ query strings in their names, and rewrites absolute links to local relative ones
 
 ## Known limitations
 
-- The footer "Begin the Dialogue" form opens a `mailto:` to info@basecampparents.com (subject from the name,
-  body = message + name + email) via `scripts/mailto_form.py`. Email is the only required field.
-  Visitors without a mail client configured can't send it.
+- The footer "Begin the Dialogue" form is reduced to its "GET IN TOUCH" button, a `mailto:` link to
+  info@basecampparents.com (`scripts/contact_button.py`).
 - The newsletter popup's Gravity Form is replaced by a "Sign up here!" button linking to the
   Constant Contact signup page (`scripts/signup_button.py`).
 - `scripts/static_cleanup.py` removes what can't work statically: the comment form (there are no

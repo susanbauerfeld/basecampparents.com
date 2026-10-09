@@ -289,51 +289,19 @@ div#post-row {
 				<div class="elementor-element elementor-element-79f2d84 elementor-widget elementor-widget-heading" data-id="79f2d84" data-element_type="widget" data-e-type="widget" data-widget_type="heading.default">
 					<h2 class="elementor-heading-title elementor-size-default">Begin the Dialogue.<br>Join the Community.</h2>				</div>
 				<div class="elementor-element elementor-element-265c644 footer_form elementor-button-align-stretch elementor-widget elementor-widget-form" data-id="265c644" data-element_type="widget" data-e-type="widget" data-settings="{&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;button_width&quot;:&quot;100&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}" data-widget_type="form.default">
-							<form class="elementor-form" method="post" name="New Form" aria-label="New Form">
-			<input type="hidden" name="post_id" value="10253"/>
-			<input type="hidden" name="form_id" value="265c644"/>
-			<input type="hidden" name="referer_title" value="Home | Base Camp Parenting" />
-
-							<input type="hidden" name="queried_id" value="10250"/>
-			
-			<div class="elementor-form-fields-wrapper elementor-labels-above">
-								<div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-50">
-												<label for="form-field-name" class="elementor-field-label">
-								Full Name							</label>
-														<input size="1" type="text" name="form_fields[name]" id="form-field-name" class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="Your Name">
-											</div>
-								<div class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-50 elementor-field-required">
-												<label for="form-field-email" class="elementor-field-label">
-								Email Address							</label>
-														<input size="1" type="email" name="form_fields[email]" id="form-field-email" class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="Email@organization.com" required="required">
-											</div>
-								<div class="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-message elementor-col-100">
-												<label for="form-field-message" class="elementor-field-label">
-								Curious about something?							</label>
-						<textarea class="elementor-field-textual elementor-field  elementor-size-sm" name="form_fields[message]" id="form-field-message" rows="4" placeholder="Briefly describe the nature of your inquiry (e.g., book talk, workshop, press, individual consult)."></textarea>				</div>
-								<div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
-					<button class="elementor-button elementor-size-sm" type="submit">
-						<span class="elementor-button-content-wrapper">
-																						<span class="elementor-button-text">GET IN TOUCH</span>
-													</span>
-					</button>
-				</div>
-			</div>
-		</form>
-<script id="mailto-form">
-document.addEventListener("submit", function (e) {
-  var f = e.target;
-  if (!f.matches || !f.matches("form.elementor-form")) return;
-  e.preventDefault();
-  e.stopPropagation();
-  var val = function (n) { var el = f.elements["form_fields[" + n + "]"]; return el ? el.value.trim() : ""; };
-  var name = val("name"), email = val("email"), msg = val("message");
-  var body = [msg, "", name, email].join("\n").trim().replace(/\n/g, "\r\n");
-  var subject = "Website inquiry" + (name ? " from " + name : "");
-  window.location.href = "mailto:info@basecampparents.com?subject=" + encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(body);
-}, true);
-</script>
+							<style id="contact-button">
+.elementor-element-265c644 a.elementor-button{background-color:var(--e-global-color-23db457);color:#000;transition-duration:300ms}
+.elementor-element-265c644 a.elementor-button:hover{background-color:#FFFBFB;color:var(--e-global-color-c684ca1)}
+</style>
+<div class="elementor-form">
+	<div class="elementor-form-fields-wrapper">
+		<div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
+			<a class="elementor-button elementor-size-sm" href="mailto:info@basecampparents.com?subject=Website%20inquiry">
+				<span class="elementor-button-content-wrapper"><span class="elementor-button-text">GET IN TOUCH</span></span>
+			</a>
+		</div>
+	</div>
+</div>
 						</div>
 					</div>
 				</div>
