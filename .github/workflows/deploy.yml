@@ -38,7 +38,12 @@ jobs:
           pip install -r scripts/requirements.txt
           python scripts/render_events.py .
 
-      - uses: actions/configure-pages@v5
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      # Share previews (iMessage, Facebook, ...) need absolute image URLs on the live host.
+      - name: Point share images at the Pages URL
+        run: python scripts/share_urls.py . "${{ steps.pages.outputs.base_url }}"
 
       - uses: actions/upload-pages-artifact@v3
         with:
