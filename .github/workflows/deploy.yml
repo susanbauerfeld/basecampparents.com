@@ -1,0 +1,56 @@
+# Builds and deploys the site to GitHub Pages. The events on /book-talks-signings/ are
+# re-rendered from the public Google Calendar on every run, so the hourly schedule keeps
+# them current. Requires Settings -> Pages -> Source: "GitHub Actions".
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: write # keepalive step below
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Render events from Google Calendar
+        run: |
+          pip install -r scripts/requirements.txt
+          python scripts/render_events.py .
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+      # GitHub disables scheduled workflows after 60 days without repo activity;
+      # re-enabling the workflow through the API resets that timer.
+      - name: Keep the schedule alive
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/deploy.yml/enable"

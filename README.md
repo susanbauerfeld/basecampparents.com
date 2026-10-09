@@ -12,6 +12,22 @@ Then open http://localhost:8000. Deploy by pointing any static host at the repo 
 All asset URLs are page-relative, so it also works from a sub-path (e.g. a GitHub Pages project URL).
 `.nojekyll` stops GitHub Pages from running Jekyll, which would drop `_`-prefixed dirs.
 
+## Events (Google Calendar)
+
+`/book-talks-signings/` lists upcoming events from the public Google Calendar
+"Base Camp Parents Talks & Signings", with the calendar embedded beside the list on wide screens.
+
+- `.github/workflows/deploy.yml` deploys the site to GitHub Pages on every push to `main` and
+  hourly, running `scripts/render_events.py` first, so calendar changes show up within an hour.
+  Pages must be set to **Settings -> Pages -> Source: GitHub Actions**. If the calendar can't be
+  fetched the run fails and the previous deploy stays up.
+- To add an event, create it in that calendar: title (e.g. "Book Talk & Signing"), location
+  (e.g. "Ferguson Library, Stamford, CT"), and the registration link in the description. The page
+  shows "Click here to register.", or "...for more information." if the description says
+  "more information". Past events drop off automatically.
+- Run locally: `pip install -r scripts/requirements.txt && python3 scripts/render_events.py .`
+  (an optional second argument is a local `.ics` file to render instead of the live feed).
+
 ## Regenerate
 
 ```sh
