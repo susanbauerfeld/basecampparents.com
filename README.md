@@ -28,6 +28,14 @@ All asset URLs are page-relative, so it also works from a sub-path (e.g. a GitHu
 - Run locally: `pip install -r scripts/requirements.txt && python3 scripts/render_events.py .`
   (an optional second argument is a local `.ics` file to render instead of the live feed).
 
+## Media appearances
+
+`/media-appearances/` lists links to TV, radio, podcast and press appearances, and is in the header
+menu after "Book Talks & Signings". To add one, put its title and link at the top of `APPEARANCES`
+in `scripts/media_page.py` and run `python3 scripts/media_page.py .`; it rewrites only the list.
+The script also built the page from `/book-talks-signings/` and adds the menu item to every page,
+so rerun it after a re-mirror.
+
 ## Share previews
 
 `og:image` / `twitter:image` must be absolute URLs on the host actually serving the site. The deploy
@@ -47,6 +55,7 @@ python3 scripts/postprocess.py <wget-output-dir> <site-dir>
 python3 scripts/contact_button.py <site-dir>
 python3 scripts/signup_form.py <site-dir>
 python3 scripts/static_cleanup.py <site-dir>
+python3 scripts/media_page.py <site-dir>
 python3 scripts/content_edits.py <site-dir>   # also copy wp-content/uploads/2026/06/basecampparents-authors.png
 # static_cleanup.py doesn't fetch the Elementor lightbox/dialog/swiper/share-link assets
 # that load lazily on /gallery/; download them from the live site too.
