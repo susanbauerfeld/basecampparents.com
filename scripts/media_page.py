@@ -20,12 +20,32 @@ SITE = sys.argv[1] if len(sys.argv) > 1 else "."
 # e.g. from the page's og:image); without one the card shows the outlet's name instead.
 APPEARANCES = [
     {
+        "title": "Beautifully Complex - October 29, 2026",
+        "segment": "How Worrying Less Helps Children More",
+        "outlet": "Beautifully Complex · Podcast",
+        "url": "https://parentingadhdandautism.com/381/",
+        "image": "beautifully-complex-381.jpg",
+        "action": "Listen to the full episode",
+    },
+    {
         "title": "Bloom TV - October 22, 2026",
         "segment": "Worry Less to Help Your Kids More",
         "outlet": "WFLA · Bloom",
         "url": "https://www.wfla.com/video/worry-less-to-help-your-kids-more-bloom/12290446",
         "image": "bloom-tv-2026-10-22.jpg",
         "action": "Watch the segment",
+    },
+]
+
+# Video clips shown on the page under their own heading, below the cards. "video" and
+# "poster" are in wp-content/uploads/media/.
+CLIPS = [
+    {
+        "heading": "Chris talks about the role of parents",
+        "video": "parents-are-base-camp-leaders.mp4",
+        "poster": "parents-are-base-camp-leaders.jpg",
+        "source": "Beautifully Complex, episode 381",
+        "url": "https://parentingadhdandautism.com/381/",
     },
 ]
 
@@ -55,6 +75,11 @@ CSS = """<style id="media-layout-css">
 .media-segment{margin:6px 0 0;font-family:Cardo,Georgia,serif;font-size:18px;font-style:italic;line-height:1.4;color:#555}
 .media-action{margin:auto 0 0;padding-top:16px;font-family:Inter,sans-serif;font-size:14px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--Green)}
 .media-card:hover .media-action{text-decoration:underline}
+.media-clip{margin:64px auto 0;max-width:400px;text-align:center}
+.media-clip-heading{margin:0 0 20px;font-family:Cardo,Georgia,serif;font-size:32px;font-weight:700;line-height:1.2;color:#222}
+.media-clip video{display:block;width:100%;aspect-ratio:9/16;background:#C3DDDD;border:1px solid #dfe9e9}
+.media-clip-source{margin:12px 0 0;font-family:Inter,sans-serif;font-size:14px;color:#555}
+.media-clip-source a{color:var(--Green);font-weight:600}
 </style>"""
 
 NAV_ITEM = re.compile(r'<li class="[^"]*menu-item-10952[^"]*"><a [^>]*>.*?</li>')
@@ -81,7 +106,20 @@ def render_list():
             "\t</a>\n"
             "</li>"
         )
-    return f'{START}\n<ul class="media-list">\n' + "\n".join(items) + f"\n</ul>\n{END}"
+    clips = []
+    for c in CLIPS:
+        clips.append(
+            '<section class="media-clip">\n'
+            f'\t<h2 class="media-clip-heading">{html.escape(c["heading"])}</h2>\n'
+            f'\t<video controls playsinline preload="none" poster="../wp-content/uploads/media/{html.escape(c["poster"])}">'
+            f'<source src="../wp-content/uploads/media/{html.escape(c["video"])}" type="video/mp4"></video>\n'
+            f'\t<p class="media-clip-source">From <a href="{html.escape(c["url"])}" target="_blank" rel="noopener">{html.escape(c["source"])}</a></p>\n'
+            "</section>"
+        )
+    return (
+        f'{START}\n<ul class="media-list">\n' + "\n".join(items) + "\n</ul>\n"
+        + "".join(c + "\n" for c in clips) + END
+    )
 
 
 def make_page():
