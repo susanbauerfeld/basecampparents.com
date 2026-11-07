@@ -49,6 +49,23 @@ CLIPS = [
     },
 ]
 
+# Audio clips, listed with their captions below the video clips. "audio" is an MP3 in
+# wp-content/uploads/media/.
+AUDIO = [
+    {
+        "caption": "Susan speaking about Gentle Parenting on KNX LA Radio News",
+        "audio": "knx-gentle-parenting.mp3",
+    },
+    {
+        "caption": "Susan speaking about parental overprotection on KNX LA Radio News",
+        "audio": "knx-parental-overprotection.mp3",
+    },
+    {
+        "caption": "Susan speaking about technology on KNX LA Radio News",
+        "audio": "knx-technology.mp3",
+    },
+]
+
 SLUG = "media-appearances"
 TITLE = "Media Appearances"
 DESCRIPTION = "Susan Bauerfeld and Chris Parrott on TV, radio, podcasts and in the press."
@@ -80,6 +97,10 @@ CSS = """<style id="media-layout-css">
 .media-clip video{display:block;width:100%;aspect-ratio:9/16;background:#C3DDDD;border:1px solid #dfe9e9}
 .media-clip-source{margin:12px 0 0;font-family:Inter,sans-serif;font-size:14px;color:#555}
 .media-clip-source a{color:var(--Green);font-weight:600}
+.media-audio-list{display:flex;flex-direction:column;gap:20px;margin:64px auto 0;max-width:640px}
+.media-audio{margin:0;padding:20px 22px;background:#fff;border:1px solid #dfe9e9}
+.media-audio figcaption{margin:0 0 12px;font-family:Cardo,Georgia,serif;font-size:20px;font-weight:700;line-height:1.3;color:#222}
+.media-audio audio{display:block;width:100%}
 </style>"""
 
 NAV_ITEM = re.compile(r'<li class="[^"]*menu-item-10952[^"]*"><a [^>]*>.*?</li>')
@@ -116,9 +137,18 @@ def render_list():
             f'\t<p class="media-clip-source">From <a href="{html.escape(c["url"])}" target="_blank" rel="noopener">{html.escape(c["source"])}</a></p>\n'
             "</section>"
         )
+    audio = ""
+    if AUDIO:
+        audio = '<section class="media-audio-list">\n' + "".join(
+            '\t<figure class="media-audio">\n'
+            f'\t\t<figcaption>{html.escape(a["caption"])}</figcaption>\n'
+            f'\t\t<audio controls preload="none" src="../wp-content/uploads/media/{html.escape(a["audio"])}"></audio>\n'
+            "\t</figure>\n"
+            for a in AUDIO
+        ) + "</section>\n"
     return (
         f'{START}\n<ul class="media-list">\n' + "\n".join(items) + "\n</ul>\n"
-        + "".join(c + "\n" for c in clips) + END
+        + "".join(c + "\n" for c in clips) + audio + END
     )
 
 

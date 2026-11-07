@@ -33,7 +33,8 @@ All asset URLs are page-relative, so it also works from a sub-path (e.g. a GitHu
 `/media-appearances/` lists links to TV, radio, podcast and press appearances, and is in the header
 menu after "Book Talks & Signings". To add one, put its title and link at the top of `APPEARANCES`
 in `scripts/media_page.py` and run `python3 scripts/media_page.py .`; it rewrites only the list.
-Video clips (shown below the cards, each under its own heading) go in `CLIPS` the same way.
+Video clips (shown below the cards, each under its own heading) go in `CLIPS` the same way, and
+audio clips (an MP3 with a caption, below the video clips) in `AUDIO`.
 The script also built the page from `/book-talks-signings/` and adds the menu item to every page,
 so rerun it after a re-mirror.
 
