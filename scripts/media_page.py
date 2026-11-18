@@ -20,7 +20,7 @@ SITE = sys.argv[1] if len(sys.argv) > 1 else "."
 # e.g. from the page's og:image); without one the card shows the outlet's name instead.
 APPEARANCES = [
     {
-        "title": "Parenting Anxious Teens Podcast 11/10/2026",
+        "title": "Parenting Anxious Teens Podcast - November 10, 2026",
         "segment": "Is Worrying About Your Anxious Teen Making Their Anxiety Worse?",
         "outlet": "Parenting Anxious Teens · Podcast",
         "url": "https://podcasts.apple.com/us/podcast/125-is-worrying-about-your-anxious-teen-making-their/id1757142421?i=1000800988154",
