@@ -18,7 +18,17 @@ SITE = sys.argv[1] if len(sys.argv) > 1 else "."
 
 # Newest first. "image" is a thumbnail in wp-content/uploads/media/ (the video's own still,
 # e.g. from the page's og:image); without one the card shows the outlet's name instead.
+# "play": False leaves the play button off the thumbnail, for articles.
 APPEARANCES = [
+    {
+        "title": "Chris in Parade magazine",
+        "segment": "We Asked 3 Child Psychologists What Skill Every Child Should Learn Outside the Classroom—They All Said the Same Thing",
+        "outlet": "Parade · Article",
+        "url": "https://parade.com/living/key-skill-every-child-should-learn-outside-the-classroom-according-to-psychologists",
+        "image": "parade-skill-outside-classroom.jpg",
+        "play": False,
+        "action": "Read the article",
+    },
     {
         "title": "Parenting Anxious Teens Podcast - November 10, 2026",
         "segment": "Is Worrying About Your Anxious Teen Making Their Anxiety Worse?",
@@ -119,7 +129,8 @@ def render_list():
     items = []
     for a in APPEARANCES:
         if a.get("image"):
-            thumb = f'<img src="../wp-content/uploads/media/{html.escape(a["image"])}" alt="" loading="lazy"><span class="media-play"></span>'
+            play = '<span class="media-play"></span>' if a.get("play", True) else ""
+            thumb = f'<img src="../wp-content/uploads/media/{html.escape(a["image"])}" alt="" loading="lazy">{play}'
         else:
             thumb = f'<span class="media-thumb-text">{html.escape(a["outlet"])}</span>'
         segment = f'\n\t\t<p class="media-segment">{html.escape(a["segment"])}</p>' if a.get("segment") else ""
